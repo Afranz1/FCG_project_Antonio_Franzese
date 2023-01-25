@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FCG-Project Florist</title>
+  <link rel="stylesheet" href="desc_style.css">
+</head>
+<body bgcolor= "#E0FFFF" >
+  <h1 style="color:#2471C8">Project Florist</h1>
+  <p align = center>Progetto del corso di <font color= "blue"> Fondamenti di Computer Graphics </font>, anno 2021-2022.</p></br> 
+  <p style ="color:#3C413A">
+  L'idea del progetto è nata dal fatto che negli scorsi anni per potermi mantenere gli studi ho lavorato come fioraio e quest'esperienza è risultata molto positiva.
+Di fatto il gioco è una sorta di simulatore di questa mia "vita" da fioraio dove è possibile riscontrare alcuni elementi caratterizzanti.</br></br>
+    Gli elementi che compongono la scena sono:
+    <ul style="color:#3C413A" >
+        <li>Un cubo che funge da mondo che racchiude tutti gli altri elementi</li></br>
+        <li>Alcune case per dare l'idea di una piccola città di periferia</li></br>
+        <li>Un furgoncino per le consegne</li></br>
+        <li>Un personaggio low poly che mi rappresenta</li></br>
+        <li>Un albero a fianco al negozio di fiori</li></br>
+		<li>Una pompa di benzina</li></br>
+    </ul>
+	<p style="color:#3C413A">
+  Il soggetto principale è il furgoncino delle consegne, attorno cui il resto della scena è stata costruita.</br></br>
+  L'interazione con la scena avviene tramite il mouse, la tastiera e un pannello di controllo. Come richiesto, è possibile usufruire dell'applicazione anche da un dispositivo mobile.</br>
+  La scena necessita di circa un secondo per essere renderizzata la prima volta, in quanto vengono utilizzate svariate texture di dimensioni nell'ordine dei MB.</br> </br>
+  <div>
+		<img src="texture\mondo.PNG" height="270" >
+			<img src="texture\mondo1.PNG" height="270" >
+			<img src="texture\mondo3.PNG" height="270" >
+  
+		</div>
+		</br>
+  <h2 style="color:black"><center>Caratteristiche dell'applicazione</center></h2></br>
+  <h3 style="color:black">Dettagli degli elementi</h3>
+  <p style="color:#3C413A">
+  Gli oggetti della scena sono stati realizzati attraverso l'utilizzo del software Blender.</br>
+ 
+  <p style="color:#3C413A">
+  Gli elementi creati in Blender, successivamente importati nel codice tramite file .obj e .mtl, sono:
+  <ul style="color:#3C413A">
+    <li>Il cubo a cui sono state applicate due texture differenti, una per il cielo e la pianura, l'altra utilizzata per realizzare le strade della città</li></br>
+    <li>Il furgoncino al quale sono state applicate più texture, una per la targa personalizzata, una per le ruote, una per finestrini e tergicristallo, e infine una che rappresenta il logo della fioreria</li></br>
+    <li>Le case texturizzate con dei colori in quanto mi è risultato più semplice lavorarci sopra</li></br>
+    <li>L'omino low poly avente colorazioni diverse per t-shirt,pantaloni,skin e capelli più l'applicazione di texture sulle scarpe in modo da poter raffigurare quelle che indosso usualmente e una 
+	texture sul volto raffigurante me stesso</li></br>
+	<li>Un albero avente una colorazione marrone per il tronco e una texture di foglie per la chioma</li></br>
+  </ul>
+  <p style="color:#3C413A">
+  Il furgoncino è stato l'obj con la fase di realizzazione più lunga. Ho utilizzato il <font color= "red"> modifier mirror</font> per la realizzazione delle ruote, dei fanali e degli specchietti ,in modo tale da poterli avere simmetrici, 
+  oltre alle varie tecniche di <font color= "red"> extrusion </font>,<font color= "red"> loop cut  </font> e <font color= "red">surface subdivisioning </font>.</br>
+ 
+   <h3>Texture utilizzate</h3>
+   <div>
+			<img src="texture\world.jpg" height="200" >
+			<img src="texture\Ruota.jpg" height="200" >
+			<img src="texture\glass_texture.jpg" height="200" >
+			<img src="texture\targa_sfamml.jpg" height="200" >
+			<img src="texture\fioreria_sfamml.jpg" height="200" >
+			<img src="texture\me.jpeg" height="200" >
+			<img src="texture\houses.PNG" height="200" >
+			<img src="texture\Logo_nike_principal.jpg" height="200" >
+			<img src="texture\city_road.jpg" height="200" >
+			<img src="texture\foglie.jpg" height="200" >
+			
+			<img src="texture\Logo_negozio_zio.jpg" height="200" >
+			<img src="texture\pompa-02.jpg" height="200" >
+			<img src="texture\pompa-03-01-01.jpg" height="200" >
+		</div>
+   
+  <h3>Illuminazione</h3>
+  <p style="color:#3C413A">
+  Tutti gli elementi sono illuminati da una luce ambientale che li rende visibili, anche quelli che non sarebbero visibili perchè esclusi dall'illuminazione della sorgente luminosa.
+L'illuminazione principale pero' e' rappresentata dalla luce direzionale inserita, che può essere modificata dal menu a lato tramite le varie opzioni (posizione, orientamento, etc.) e può essere trasformata in una <font color="red">Spotlight</font> tramite l'opzione nel menu.
+Andando a modificare la posizione della luce è possibile vedere i vari effetti di quest'ultima.
+</br>
+</br>
+<img src="texture\luci.PNG" height="600" >
+  </br>
+ 
+  
+  <h3>Ombreggiatura</h3>
+  <p style="color:#3C413A">
+  E' possibile attivare l'ombreggiatura, generata grazie al calcolo della profondità dei pixel rispetto alla sorgente luminosa e al resto della scena. </br>
+  Inoltre nel menu a fianco vi è la possibilità di attivare/disabilitare le ombre tramite l'apposita opzione.
+  </br>
+  </br>
+  <img src="texture\ombre.PNG" height="600" >
+  <h3>Interazione utente</h3>  
+  <p style="color:#3C413A">
+  L'interazione avviene tramite l'utilizzo del mouse, della tastiera e del pannello di controllo a schermo.</br>
+  Tenendo premuto un pulsante del mouse e muovendolo si può spostare il furgoncino delle consegne, stessa cosa con le frecce direzionali della tastiera.</br></br>
+  Il pannello di controllo presenta invece diversi parametri modificabili:
+  <img src="texture/menu.png" alt="control panel" style="float:right;width:400px;height:1000px;">
+  <ul style="color:#3C413A">
+    <li>L'opzione <font color="blue">log</font> permette di ottenere i log dell'applicazione nel pannello di controllo del browser</li></br>
+    <li><font color="blue">Target</font> permette di selezionare l'oggetto target ovvero o il mondo(Saviano) o il furgone (Furgoncico) </li></br>
+    <li><font color="blue">Look_at</font> permette l'ancoramento del target della telecamera all'oggetto selezionato (target)</li></br>
+    <li><font color="blue">Follow</font>  se attivata, oltre ad ancorare il target della camera all'oggetto, quando l'ogetto si muove la camera esegue i sui stessi movimenti</li></br>
+    <li><font color="blue">CameraX</font>,<font color="blue">cameraY</font>,<font color="blue">cameraZ</font> permettono di spostare la posizione della telecamera sui rispettivi assi</li></br>
+    <li><font color="blue">CameraUp</font> permette di settare il versore "up" della camera sugli assi X,Y e Z</li></br>
+    <li><font color="blue">ZNear</font> e <font color="blue">ZFar</font> permettono di impostare la distanza di rendering della camera</li></br>
+    <li><font color="blue">Fov</font> permette la modifica del Field of View della camera</li></br>
+    <li><font color="blue">Target X,Y,Z</font> permettono la modifica delle coordinate del target della telecamera</li></br>
+	<li><font color="blue">Shadows</font> permette di abilitare/disabilitare il rendering delle ombre</li></br>
+    <li><font color="blue">LightFrustum</font> permette di visualizzare il frustum della sorgente luminosa</li></br>
+    <li><font color="blue">LightPos X,Y,Z</font> permettono di gestire le coordinate posizione della luce</li></br>
+    <li><font color="blue">LightTarg X,Y,Z</font> permettono di settare la direzione della luce, quindi la sua direzione</li></br>
+    <li><font color="blue">LightFov</font> permette di aumentare/diminuire l'ampiezza dell luce quando è in modalità <font color="red">spotlight</font></li></br>
+	<li><font color="blue">LightNear</font> permette di modificare la distanza alla quale la sorgente di luce parte rispetto al suo punto di origine</li></br>
+	<li><font color="blue">LightFar</font> permette di modificare la distanza massima che la sorgente luminosa può illuminare</li></br>
+	<li><font color="blue">SpotLight</font> permette di modificare il tipo di illuminazione(<font color="red">Direzionale</font> o <font color="red">Spotlight</font>) </li></br>
+	<li><font color="blue">LightWidth</font> e <font color="blue">LightHeight</font> permettono di modificare le dimensioni della luce</li></br>
+	<li><font color="blue">CurrentObj</font> è un menu a tendina che permette di scegliere quale oggetto modificare con i parametri successivi</li></br>
+	<li><font color="blue">Pos X,Y,Z</font> permettono di modificare le coordinate dell'oggetto sopra selezionato</li></br>
+	<li><font color="blue">Scale X,Y,Z</font> permettono la scalatura dell'oggetto sui rispettivi assi</li></br>
+	<li><font color="blue">Psi,Theta,Phi</font> permettono la rotazione dell'oggetto sui rispettivi assi</li></br>
+	
+	
+	
+  </ul>
+ 
+  
+   
+<h3>Utilizzo su dispositivi mobile</h3>
+<p style="color:#3C413A">
+  Essendo questa un'applicazione web, l'utilizzo su un disposito mobile risulta essere semplificato. L'interazione avviene tramite i tocchi sullo schermo invece che tramite il mouse/tastiera, i quali vengono catturati e gestiti adeguatamente dall'applicazione.
+  Il movimento del furgoncino risulta essere molto fluido grazie agli eventi touch.</br>
+  
+  <h3>Note</h3>
+  <p style="color:#3C413A">
+  Il progetto nasce grazie alla collaborazione di 4 colleghi, con la realizzazione di una solida base di codice comune permettendo poi a ognuno di noi di sviluppare il progetto personale con maggiore precisione. 
+  Il codice organizzato e strutturato in Typescript, permette l'utilizzo di WebGl e degli script JavaScritp con una maggiore tipizzazione. Il modello di programmazione è stato riscritto sulla programazione ad aventi, dove ogni azione effetuata scatena un evento che è possibile catturare per aggiornare la scena. 
+  Ciò permette una maggiore efficienza a livello di utilizzo di risorse e di efficienza del codice. 
+  Si ringrazia dunque Luca De Risi, Luca Marchegiani e Luca Landolfi per la collaborazione.
+  
+</body>
+</html>
